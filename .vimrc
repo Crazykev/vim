@@ -399,6 +399,13 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 
+"golang configure
+let g:go_def_mode = 'godef'
+
+"show function signature
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+
+
 set iskeyword+=.
 set termencoding=utf-8
 set encoding=utf8
@@ -436,16 +443,10 @@ Bundle 'ctrlp-modified.vim'
 Bundle 'last_edit_marker.vim'
 Bundle 'synmark.vim'
 "Bundle 'Python-mode-klen'
-Bundle 'SQLComplete.vim'
-Bundle 'Javascript-OmniCompletion-with-YUI-and-j'
-"Bundle 'JavaScript-Indent'
 "Bundle 'Better-Javascript-Indentation'
-Bundle 'jslint.vim'
-Bundle "pangloss/vim-javascript"
 Bundle 'Vim-Script-Updater'
 Bundle 'ctrlp.vim'
 Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'jsbeautify'
 Bundle 'The-NERD-Commenter'
 "django
 Bundle 'django_templates.vim'
