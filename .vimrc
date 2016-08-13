@@ -418,23 +418,19 @@ let g:tagbar_type_go = {
         \ 'm:methods',
         \ 'r:constructor',
         \ 'f:functions'
-    \ 
-],
+        \],
     \ 'sro' : '.',
     \ 'kind2scope' : {
         \ 't' : 'ctype',
         \ 'n' : 'ntype'
-    \ 
-},
+        \},
             \ 'scope2kind' : {
         \ 'ctype' : 't',
         \ 'ntype' : 'n'
-    \ 
-},
+        \},
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
-    \ 
-}
+    \}
 
 "golang configure
 "let g:go_def_mode = 'godef'
