@@ -20,8 +20,8 @@ else
     wget https://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.6.3.linux-amd64.tar.gz
     cat >>~/.bashrc <<EOF
-export GOPATH=\$GOPATH:\$HOME/go-project
-export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin/
+export GOPATH=$HOME/go-project
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin/
 EOF
 fi
 source ~/.bashrc
@@ -42,10 +42,6 @@ vim crazykev -c "BundleInstall" -c "q" -c "q"
 echo "Installing golang tools dependency binaries" >> crazykev
 vim crazykev -c "GoInstallBinaries" -c "qa"
 rm crazykev
-
-echo "Installing other golang tools"
-go get -u github.com/jstemmer/gotags
-go install -v github.com/jstemmer/gotags
 
 echo "安装完成"
 
