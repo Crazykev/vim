@@ -41,5 +41,10 @@ vim crazykev -c "BundleInstall" -c "q" -c "q"
 echo "Installing golang tools dependency binaries" >> crazykev
 vim crazykev -c "GoInstallBinaries" -c "qa"
 rm crazykev
+
+echo "Installing other golang tools"
+go get -u github.com/jstemmer/gotags
+go install -v github.com/jstemmer/gotags
+
 echo "安装完成"
 

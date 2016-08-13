@@ -264,6 +264,10 @@ endfunc
 "结束定义FormartSrc
 
 
+"tagbar key mapping
+nmap <F8> :TagbarToggle<CR>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""实用设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -399,11 +403,46 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 
+"""""""gotags configure
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ 
+],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ 
+},
+            \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ 
+},
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ 
+}
+
 "golang configure
-let g:go_def_mode = 'godef'
+"let g:go_def_mode = 'godef'
 
 "show function signature
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
 
 
 set iskeyword+=.
@@ -426,6 +465,8 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Yggdroot/indentLine'
@@ -457,6 +498,7 @@ Bundle 'Django-Projects'
 " ...
 " golang plugin
 Bundle 'faith/vim-go'
+Bundle 'majutsushi/tagbar'
 
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
