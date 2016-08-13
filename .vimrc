@@ -134,8 +134,8 @@ func SetTitle()
 	else 
 		call setline(1, "/*************************************************************************") 
 		call append(line("."), "	> File Name: ".expand("%")) 
-		call append(line(".")+1, "	> Author: ") 
-		call append(line(".")+2, "	> Mail: ") 
+		call append(line(".")+1, "	> Author: Crazykev") 
+		call append(line(".")+2, "	> Mail: crazykev@zju.edu.cn") 
 		call append(line(".")+3, "	> Created Time: ".strftime("%c")) 
 		call append(line(".")+4, " ************************************************************************/") 
 		call append(line(".")+5, "")
@@ -455,6 +455,9 @@ Bundle 'Django-Projects'
 "Bundle 'FredKSchott/CoVim'
 "Bundle 'djangojump'
 " ...
+" golang plugin
+Bundle 'faith/vim-go'
+
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
