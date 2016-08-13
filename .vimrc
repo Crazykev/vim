@@ -469,7 +469,7 @@ Bundle 'Yggdroot/indentLine'
 let g:indentLine_char = '┊'
 "ndle 'tpope/vim-rails.git'
 " vim-scripts repos
-Bundle 'L9'
+Bundle 'vim-scripts/L9'
 Bundle 'FuzzyFinder'
 " non github repos
 Bundle 'https://github.com/wincent/command-t.git'
@@ -493,7 +493,7 @@ Bundle 'Django-Projects'
 "Bundle 'djangojump'
 " ...
 " golang plugin
-Bundle 'faith/vim-go'
+Bundle 'fatih/vim-go'
 Bundle 'majutsushi/tagbar'
 
 let g:html_indent_inctags = "html,body,head,tbody"
