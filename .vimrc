@@ -18,6 +18,7 @@ au FileType scale setlocal dict+=~/.vim/dict/scale.dict
 au FileType javascript setlocal dict+=~/.vim/dict/javascript.dict
 au FileType html setlocal dict+=~/.vim/dict/javascript.dict
 au FileType html setlocal dict+=~/.vim/dict/css.dict
+au FileType go setlocal dict+=~/.vim/dict/golang.dict
 
 "
 "syntastic相关
