@@ -20,10 +20,11 @@ else
     wget https://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.6.3.linux-amd64.tar.gz
     cat >>~/.bashrc <<EOF
-    export GOPATH=\$GOPATH:\$HOME/go-project
-    export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin/
+export GOPATH=\$GOPATH:\$HOME/go-project
+export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin/
 EOF
 fi
+source ~/.bashrc
 
 sudo easy_install -ZU autopep8 
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
