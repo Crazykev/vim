@@ -265,7 +265,7 @@ endfunc
 
 
 "tagbar key mapping
-nmap <F8> :TagbarToggle<CR>
+nmap <F7> :TagbarToggle<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
