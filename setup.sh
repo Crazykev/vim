@@ -20,8 +20,10 @@ else
     wget https://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
     sudo tar -C /usr/local -xzf go1.6.3.linux-amd64.tar.gz
     cat >>~/.bashrc <<EOF
-export GOPATH=$HOME/go-project
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin/
+
+#export environment for golang
+export GOPATH=\$HOME/go-project
+export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin/
 EOF
 fi
 source ~/.bashrc
