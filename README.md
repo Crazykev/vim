@@ -12,7 +12,7 @@
 
 打开终端，执行下面的命令就自动安装好了：
 
-`wget -qO- https://raw.github.com/Crazykev/vim/master/setup.sh | sh -x`
+`wget -qO- https://raw.github.com/Crazykev/vim/master/setup.sh | bash -x`
 
 ### 或者自己手动安装：(以ubuntu为例)
 
