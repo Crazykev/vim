@@ -1,5 +1,6 @@
-#!/bin/bash
-echo "安装将花费一定时间，请耐心等待直到安装完成^_^"
+#! /bin/bash
+
+echo "This won't be fast, take a seat and have a cup of tea:D"
 if which apt-get >/dev/null; then
 	sudo apt-get install -y wget vim vim-gnome ctags xclip astyle python-setuptools python-dev git
 elif which yum >/dev/null; then
@@ -37,13 +38,13 @@ mv -f ~/vim ~/.vim
 mv -f ~/.vimrc ~/.vimrc_old
 mv -f ~/.vim/.vimrc ~/
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-echo "crazykev正在努力为您安装bundle程序" > crazykev
-echo "安装完毕将自动退出" >> crazykev
-echo "请耐心等待" >> crazykev
+echo "Installing bundle ..." > crazykev
+echo "Will exit when install finished" >> crazykev
+echo "Please be patient" >> crazykev
 vim crazykev -c "BundleInstall" -c "q" -c "q"
 echo "Installing golang tools dependency binaries" >> crazykev
 vim crazykev -c "GoInstallBinaries" -c "qa"
 rm crazykev
 
-echo "安装完成"
+echo "Install finished"
 
