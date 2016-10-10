@@ -3,7 +3,7 @@
 Works totally fine with me, based on great work of [ma6174](https://github.com/ma6174/vim). 
 Mainly remove some js plugin, add some golang plugin.
 
-[![Build Status](https://travis-ci.org/crazykev/vim.png?branch=master)](https://travis-ci.org/crazykev/vim)
+[![Build Status](https://travis-ci.org/Crazykev/vim.png?branch=master)](https://travis-ci.org/Crazykev/vim)
 
 ### How does this looks like
 
