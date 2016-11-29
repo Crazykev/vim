@@ -1,5 +1,8 @@
 #! /bin/bash
 
+GOLANG_VERSION=${GOLANG_VERSION:-1.7.3}
+GOLANG_TAR=${GOLANG_TAR:-go${GOLANG_VERSION}.linux-amd64.tar.gz}
+
 echo "This won't be fast, take a seat and have a cup of tea:D"
 if which apt-get >/dev/null; then
 	sudo apt-get install -y wget vim vim-gnome ctags xclip astyle python-setuptools python-dev git
@@ -13,13 +16,13 @@ if which brew >/dev/null;then
     brew install vim ctags git astyle
 fi
 
-echo "Configuring golang environment, version 1.6.3..."
+echo "Configuring golang environment, version ${GOLANG_VERSION}..."
 if which go > /dev/null; then
     echo "Retain original golang Environment"
     echo `go version`
 else
-    wget https://storage.googleapis.com/golang/go1.6.3.linux-amd64.tar.gz
-    sudo tar -C /usr/local -xzf go1.6.3.linux-amd64.tar.gz
+    wget https://storage.googleapis.com/golang/${GOLANG_TAR}
+    sudo tar -C /usr/local -xzf ${GOLANG_TAR}
     cat >>~/.bashrc <<EOF
 
 #export environment for golang
