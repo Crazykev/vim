@@ -30,7 +30,11 @@ export GOPATH=\$HOME/go-project
 export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin/
 EOF
 fi
-source ~/.bashrc
+
+export GOPATH=$HOME/go-project
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin/
+
+mkdir -p ${GOPATH}
 
 sudo easy_install -ZU autopep8 
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
