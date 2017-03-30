@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 GOLANG_VERSION=${GOLANG_VERSION:-1.7.3}
 GOLANG_TAR=${GOLANG_TAR:-go${GOLANG_VERSION}.linux-amd64.tar.gz}
@@ -31,8 +31,7 @@ export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin/
 EOF
 fi
 
-export GOPATH=$HOME/go-project
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin/
+source ~/.bashrc
 
 mkdir -p ${GOPATH}
 
