@@ -21,6 +21,7 @@ if which go > /dev/null; then
     echo "Retain original golang Environment"
     echo `go version`
 else
+    cd /tmp/
     wget https://storage.googleapis.com/golang/${GOLANG_TAR}
     sudo tar -C /usr/local -xzf ${GOLANG_TAR}
     cat >>~/.bashrc <<EOF
@@ -30,10 +31,6 @@ export GOPATH=\$HOME/go-project
 export PATH=\$PATH:/usr/local/go/bin:\$GOPATH/bin/
 EOF
 fi
-
-source ~/.bashrc
-
-mkdir -p ${GOPATH}
 
 sudo easy_install -ZU autopep8 
 sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
@@ -49,6 +46,8 @@ echo "Will exit when install finished" >> crazykev
 echo "Please be patient" >> crazykev
 vim crazykev -c "BundleInstall" -c "q" -c "q"
 echo "Installing golang tools dependency binaries" >> crazykev
+source ~/.bashrc
+mkdir -p ${GOPATH}
 vim crazykev -c "GoInstallBinaries" -c "qa"
 rm crazykev
 
