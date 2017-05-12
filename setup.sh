@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GOLANG_VERSION=${GOLANG_VERSION:-1.7.3}
+GOLANG_VERSION=${GOLANG_VERSION:-1.8.1}
 GOLANG_TAR=${GOLANG_TAR:-go${GOLANG_VERSION}.linux-amd64.tar.gz}
 
 echo "This won't be fast, take a seat and have a cup of tea:D"
