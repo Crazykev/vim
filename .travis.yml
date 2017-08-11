@@ -1,11 +1,12 @@
-os:
-  - linux
-  - osx
-
 language: python
 
-python:
-  - 2.7.6
+matrix:
+  include:
+    - os: linux
+      python: 2.7.6
+    - os: osx
+      sudo: required
+      language: generic
 
 script:
   - date
