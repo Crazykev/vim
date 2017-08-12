@@ -81,7 +81,7 @@ EOF
 }
 
 vim::common::setup(){
-  GOPATH=${GOPATH:-$HOME/go-project}
+  export GOPATH=${GOPATH:-$HOME/go-project}
   mkdir -p ${GOPATH}
   sudo easy_install -ZU autopep8 
   if [ ! -e /usr/local/bin/ctags ]; then
