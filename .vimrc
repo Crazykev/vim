@@ -434,11 +434,14 @@ let g:tagbar_type_go = {
 
 "golang configure
 "let g:go_def_mode = 'godef'
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+
 
 "show function signature
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap ds <Plug>(go-def-split)
 
 
 set iskeyword+=.
