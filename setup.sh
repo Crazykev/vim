@@ -9,7 +9,7 @@ vim::common::os(){
         if [ -e /etc/centos-release ]; then
           OS=centos
         elif [ -e /etc/os-release ]; then
-          if [ grep 'NAME="Ubuntu"' /etc/os-release ]; then
+          if [ `grep 'NAME="Ubuntu"' /etc/os-release` ]; then
             OS=ubuntu
           fi 
         fi ;;
