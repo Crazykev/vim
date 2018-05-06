@@ -2,7 +2,7 @@
 
 GOLANG_VERSION=${GOLANG_VERSION:-1.8.1}
 
-vim::common::os(){
+vim_setup::common::os(){
     PLATFORM=`uname`
     case $PLATFORM in
       Linux)
@@ -24,16 +24,16 @@ vim::common::os(){
     fi
 }
 
-vim::ubuntu::package(){
+vim_setup::ubuntu::package(){
     sudo apt-get install -y wget vim vim-gnome ctags xclip astyle python-setuptools python-dev git
 }
     
-vim::centos::package(){
+vim_setup::centos::package(){
     sudo yum install -y wget gcc vim git ctags xclip astyle python-setuptools python-devel	
 }
 
 ##Add HomeBrew support on  Mac OS
-vim::darwin::package(){
+vim_setup::darwin::package(){
     if ! which brew >/dev/null;then
         echo "Install HomeBrew tool first"
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -41,7 +41,7 @@ vim::darwin::package(){
     brew install vim ctags git astyle wget
 }
 
-vim::linux::golang(){
+vim_setup::linux::golang(){
     if which go > /dev/null; then
       echo "Retain original golang Environment"
       echo `go version`
@@ -60,7 +60,7 @@ EOF
     source ~/.bashrc
 }
 
-vim::darwin::golang(){
+vim_setup::darwin::golang(){
     if which go > /dev/null; then
       echo "Retain original golang Environment"
       echo `go version`
@@ -80,7 +80,7 @@ EOF
     source ~/.bash_profile
 }
 
-vim::common::setup(){
+vim_setup::common::setup(){
   GOPATH=${GOPATH:-$HOME/go-project}
   mkdir -p ${GOPATH}
   sudo easy_install -ZU autopep8 
@@ -103,27 +103,27 @@ vim::common::setup(){
 }
 
 main(){
-  vim::common::os
+  vim_setup::common::os
 
   case $OS in
     ubuntu)
-      vim::ubuntu::package
-      vim::linux::golang
+      vim_setup::ubuntu::package
+      vim_setup::linux::golang
 
     ;;
     centos)
-      vim::centos::package
-      vim::linux::golang
+      vim_setup::centos::package
+      vim_setup::linux::golang
 
     ;;
     darwin)
-      vim::darwin::package
-      vim::darwin::golang
+      vim_setup::darwin::package
+      vim_setup::darwin::golang
 
     ;;
   esac
 
-  vim::common::setup
+  vim_setup::common::setup
   echo "Install finished"
 }
 
